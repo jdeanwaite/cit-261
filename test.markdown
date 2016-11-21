@@ -19,7 +19,7 @@ title: This will be used as the title-tag of the page head
 
 [the clickable text](http://xlson.com/)
 
-<p id="foo">testme</p>
+<p id="foo">testme please</p>
 
 * Bullet lists are also easy to create
 * One more
