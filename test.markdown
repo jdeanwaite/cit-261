@@ -30,39 +30,18 @@ title: This will be used as the title-tag of the page head
         </ul>
     </header>
     <section>
-        <h3>
-            <a id="welcome-to-justins-cit-261-project-site" class="anchor"
-               href="#welcome-to-justins-cit-261-project-site" aria-hidden="true">
-                <span aria-hidden="true" class="octicon octicon-link"></span>
-            </a>Welcome
-            to Justin's CIT 261 Project Site
-        </h3>
+        ### Welcome to Justin's CIT 261 Project Site
+        This site houses my code necessary to pass the assessments in the CIT 261 course. On the left side of this page you will find links to each week's work. As you click into them you will find code snippets and links to example pages.
 
-        <p>
-            This site houses my code necessary to pass the assessments in the CIT 261 course. On the left side of this
-            page you will find links to each week's work. As you click into them you will find code snippets and links
-            to example pages.
-        </p>
-
-        <h3>
-            <a id="what-youll-see" class="anchor" href="#what-youll-see" aria-hidden="true">
-                <span aria-hidden="true" class="octicon octicon-link"></span>
-            </a>
-            What You'll See
-        </h3>
-
+        ### What You'll See
         ```javascript
-            function test() {
-                console.log("cool");
-            }
+        function test() {
+          console.log("I am a code block");
+        }
         ```
 
-        <h3>
-            <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span
-                    aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-        <p>All code on this website is the personal work of <a href="https://github.com/jdeanwaite"
-                                                               class="user-mention">@jdeanwaite</a>.</p>
+        ### Authors and Contributors
+        All code on this website is the personal work of @jdeanwaite.
     </section>
     <footer>
         <p>This project is maintained by <a href="https://github.com/jdeanwaite">jdeanwaite</a></p>
