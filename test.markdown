@@ -15,6 +15,72 @@ title: This will be used as the title-tag of the page head
     <![endif]-->
 </head>
 
+<body>
+<div class="wrapper">
+    <header>
+        <h1>Cit-261</h1>
+        <p>My personal project site for CIT 261</p>
+
+        <p class="view"><a href="https://github.com/jdeanwaite/cit-261">View the Project on GitHub
+            <small>jdeanwaite/cit-261</small>
+        </a></p>
+
+
+        <ul>
+            <li><a href="https://github.com/jdeanwaite/cit-261/zipball/master">Download <strong>ZIP File</strong></a>
+            </li>
+            <li><a href="https://github.com/jdeanwaite/cit-261/tarball/master">Download <strong>TAR Ball</strong></a>
+            </li>
+            <li><a href="https://github.com/jdeanwaite/cit-261">View On <strong>GitHub</strong></a></li>
+        </ul>
+    </header>
+    <section>
+        <h3>
+            <a id="welcome-to-justins-cit-261-project-site" class="anchor"
+               href="#welcome-to-justins-cit-261-project-site" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>Welcome
+            to Justin's CIT 261 Project Site
+        </h3>
+
+        <p>
+            This site houses my code necessary to pass the assessments in the CIT 261 course. On the left side of this
+            page you will find links to each week's work. As you click into them you will find code snippets and links
+            to example pages.
+        </p>
+
+        <h3>
+            <a id="what-youll-see" class="anchor" href="#what-youll-see" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            What You'll See
+        </h3>
+
+        ```javascript
+            function test() {
+                console.log("cool");
+            }
+        ```
+
+        <h3>
+            <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+        <p>All code on this website is the personal work of <a href="https://github.com/jdeanwaite"
+                                                               class="user-mention">@jdeanwaite</a>.</p>
+    </section>
+    <footer>
+        <p>This project is maintained by <a href="https://github.com/jdeanwaite">jdeanwaite</a></p>
+        <p>
+            <small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a>
+            </small>
+        </p>
+    </footer>
+</div>
+<script src="javascripts/scale.fix.js"></script>
+
+</body>
+
 # This is a H1
 
 [the clickable text](http://xlson.com/)
