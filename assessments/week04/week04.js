@@ -34,7 +34,7 @@ function fetchWeatherData() {
             return;
         }
         httpRequest.onreadystatechange = parseWeatherData;
-        httpRequest.open('GET', 'https://api.openweathermap.org/data/2.5/weather?zip=' + zipCode + ',us&appid=fe7f87daaa3ac305ee71e2ec8deb79ec');
+        httpRequest.open('GET', 'https://api.wunderground.com/api/3b345a3fea42ac03/conditions/q/' + zipCode + '.json');
         httpRequest.send();
     }
 }
@@ -46,9 +46,8 @@ function parseWeatherData() {
             try {
                 var data = JSON.parse(httpRequest.responseText);
                 console.log(data);
-                console.log(data.weather[0].main);
-                document.querySelector("#city-label").innerText            = data.name;
-                document.querySelector("#current-weather-label").innerText = data.weather[0].main;
+                document.querySelector("#city-label").innerText            = data["current_observation"]["display_location"]["full"];
+                document.querySelector("#current-weather-label").innerText = data["current_observation"]["weather"];
             }
             catch (e) {
                 console.log(e);
@@ -60,3 +59,5 @@ function parseWeatherData() {
         }
     }
 }
+
+//3b345a3fea42ac03
