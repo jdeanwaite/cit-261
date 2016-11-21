@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Week 02</title>
+
+    <link rel="stylesheet" href="../../stylesheets/styles.css">
+    <link rel="stylesheet" href="../../stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        textarea {
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h1>Cit-261</h1>
+        <a class="anchor" href="../../index.html">Home</a>
+        <p>My personal project site for CIT 261</p>
+
+        <p class="view"><a href="https://github.com/jdeanwaite/cit-261">View the Project on GitHub
+            <small>jdeanwaite/cit-261</small>
+        </a></p>
+
+
+        <ul>
+            <li><a href="https://github.com/jdeanwaite/cit-261/zipball/master">Download <strong>ZIP File</strong></a>
+            </li>
+            <li><a href="https://github.com/jdeanwaite/cit-261/tarball/master">Download <strong>TAR Ball</strong></a>
+            </li>
+            <li><a href="https://github.com/jdeanwaite/cit-261">View On <strong>GitHub</strong></a></li>
+        </ul>
+    </header>
+    <section>
+        <h3>
+            <a id="week-04" class="anchor" href="#week-04" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Week 04
+        </h3>
+
+        <p>
+            Week 04 includes the following assessments:
+        </p>
+        <!--JSON Parse, Stringify, Using XMLHTTPRequest to Consume a JSON Web Service-->
+        <ul>
+            <li><a class="anchor" href="#json-parse">JSON Parse</a></li>
+            <li><a class="anchor" href="#json-stringify">JSON Stringify</a></li>
+            <li><a class="anchor" href="#using-xml-http-request">Using XMLHTTPRequest to Consume a JSON Web Service</a>
+            </li>
+        </ul>
+
+        <h3>
+            <a id="json-parse" class="anchor" href="#json-parse" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            JSON Parse
+        </h3>
+
+        <p><code>JSON.parse()</code> allows you to convert a string of JSON into a JavaScript object, provided the
+            string is valid JSON. To test this functionality, type a valid JSON string into the textarea and click
+            "Parse" to parse it and verify that it is valid JSON.</p>
+
+        <textarea name="jsonToParse">
+            {
+                "test": "me",
+                "hello": "world"
+            }
+        </textarea>
+        <br>
+        <button type="button" onclick="parseJson()">Parse</button>
+        <br>
+        <br>
+
+        <h3>
+            <a id="json-stringify" class="anchor" href="#json-stringify" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            JSON Stringify
+        </h3>
+
+        <p><code>JSON.stringify</code> works the opposite of <code>JSON.parse</code> in that it takes a JavaScript
+            object and converts it into a string that can be used to send to a web service, store locally, or store in a
+            file somewhere.</p>
+
+        <p>Click "Show me" to see an object stringified.</p>
+        <button type="button" onclick="stringifyObject()">Show me</button>
+        <br>
+        <textarea name="jsonAfterStringified"></textarea>
+
+        <h3>
+            <a id="using-xml-http-request" class="anchor" href="#using-xml-http-request" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Using XMLHTTPRequest to Consume a JSON Web Service
+        </h3>
+
+        <p>Because JSON is so easy to convert between plain text and a JavaScript object, it is very powerful for use
+            with RESTful API services. It makes data transfer easy and universal without the need to tediously parse
+            XML.</p>
+        <p>Combining JSON with AJAX (XMLHTTPRequest) allows for an awesome user experience. AJAX allows the browser to
+        load up content from another location without the need to reload the page.</p>
+        <p>Type the zip code for which you would like to see the weather:</p>
+        <input type="text" name="zipCode">
+        <button type="button" onclick="fetchWeatherData()">Get Weather</button>
+        <br>
+        <br>
+        <label>City Name:</label> <span id="city-label"></span>
+        <br>
+        <label>Current Weather:</label> <span id="current-weather-label"></span>
+    </section>
+    <footer>
+        <p>This project is maintained by <a href="https://github.com/jdeanwaite">jdeanwaite</a></p>
+        <p>
+            <small>
+                Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a>
+            </small>
+        </p>
+    </footer>
+</div>
+<script src="../../javascripts/scale.fix.js"></script>
+<script src="../../assessments/week04/week04.js"></script>
+
+</body>
+</html>
