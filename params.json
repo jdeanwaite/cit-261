@@ -1,6 +1,6 @@
 {
   "name": "Cit-261",
   "tagline": "My personal project site for CIT 261",
-  "body": "### Welcome to Justin's CIT 261 Project Site\r\nThis site houses my code necessary to pass the assessments in the CIT 261 course. On the left side of this page you will find links to each week's work. As you click into them you will find code snippets and links to example pages.\r\n\r\n### Assessments\r\n[Week 02: Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays](https://jdeanwaite.github.io/cit-261/assessments/week02)\r\n\r\n### Authors and Contributors\r\nAll code on this website is the personal work of @jdeanwaite.",
+  "body": "### Welcome to Justin's CIT 261 Project Site\r\nThis site houses my code necessary to pass the assessments in the CIT 261 course. On the left side of this page you will find links to each week's work. As you click into them you will find code snippets and links to example pages.\r\n\r\n### Assessments\r\n[Week 02: Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays](https://jdeanwaite.github.io/cit-261/assessments/week02)\r\n\r\n[Week 03: Object Creation Functions, Inheritance, Properties, Methods, Instantiation](https://jdeanwaite.github.io/cit-261/assessments/week03)\r\n\r\n### Authors and Contributors\r\nAll code on this website is the personal work of @jdeanwaite.",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
