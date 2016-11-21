@@ -13,7 +13,8 @@
     <![endif]-->
     <style type="text/css">
         textarea.loop {
-            width: 300px; height: 200px;
+            width: 300px;
+            height: 100px;
         }
     </style>
 </head>
@@ -49,12 +50,12 @@
         </p>
         <ul>
             <li><a class="anchor" href="#loops">Loops</a></li>
-            <li><a class="anchor" href="">Conditional Statements</a></li>
-            <li><a class="anchor" href="">Functions</a></li>
-            <li><a class="anchor" href="">Variables</a></li>
-            <li><a class="anchor" href="">Parameters</a></li>
-            <li><a class="anchor" href="">Arrays</a></li>
-            <li><a class="anchor" href="">Associative Arrays</a></li>
+            <li><a class="anchor" href="#conditional-statements">Conditional Statements</a></li>
+            <li><a class="anchor" href="#functions">Functions</a></li>
+            <li><a class="anchor" href="#variables">Variables</a></li>
+            <li><a class="anchor" href="#parameters">Parameters</a></li>
+            <li><a class="anchor" href="#arrays">Arrays</a></li>
+            <li><a class="anchor" href="#associative-arrays">Associative Arrays</a></li>
         </ul>
 
         <h3>
@@ -70,18 +71,20 @@
                 <li>
                     Type a list separated by commas of anything:
                     <br>
-                    <textarea class="loop" id="loop-value-1" name="loopValue1" title="Loop Test 1">1,2,3,4,5,6,7</textarea>
+                    <textarea class="loop" id="loop-value-1" name="loopValue1"
+                              title="Loop Test 1">1,2,3,4,5,6,7</textarea>
                 </li>
                 <li>
                     Select which direction you would like to loop it:
                     <br>
-                    <label class="radio"><input type="radio" name="loopDirection1" value="forward" checked> Forward</label>
+                    <label class="radio"><input type="radio" name="loopDirection1" value="forward" checked>
+                        Forward</label>
                     <label class="radio"><input type="radio" name="loopDirection1" value="reverse"> Reverse</label>
                 </li>
                 <li>
                     Click "Go" to see your list printed.
                     <br>
-                    <button type="button">Go</button>
+                    <button type="button" onclick="printListFromText()">Go</button>
                 </li>
                 <textarea class="loop" id="loop-results-1" readonly></textarea>
             </ol>
@@ -90,21 +93,216 @@
                 <li>
                     Enter the number of times you wish to loop
                     <br>
-                    <input type="number" class="loop" id="loop-iterate-number" name="loopIterateNumber" title="Loop Test 2 Number" value="5">
+                    <input type="number" class="loop" id="loop-iterate-number" name="loopIterateNumber"
+                           title="Loop Test 2 Number" value="5">
                 </li>
                 <li>
                     Select which direction you would like to loop it:
                     <br>
-                    <input type="text" class="loop" id="loop-iterate-text" name="loopIterateText" title="Loop Test 2 Text" value="Hello World">
+                    <input type="text" class="loop" id="loop-iterate-text" name="loopIterateText"
+                           title="Loop Test 2 Text" value="Hello World">
                 </li>
                 <li>
                     Click "Go" to see your list printed.
                     <br>
-                    <button type="button">Go</button>
+                    <button type="button" onclick="printListFromNumber()">Go</button>
                 </li>
                 <textarea class="loop" id="loop-results-2" readonly></textarea>
             </ol>
         </div>
+
+        <h3>
+            <a id="conditional-statements" class="anchor" href="#conditional-statements" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Conditional Statements
+        </h3>
+        <p>Conditional statements allow you to test if certain values exists, if a value is equal to another value, for
+            null checking, and more. The previous example uses the following conditional to verify that the user
+            provided the
+            right input:</p>
+        <pre><code>
+var number = parseInt(document.querySelector('input[name="loopIterateNumber"]').value);
+var text = document.querySelector('input[name="loopIterateText"]').value;
+if (!isNaN(number) && text)
+{
+    ...
+}
+        </code></pre>
+
+        <h3>
+            <a id="functions" class="anchor" href="#functions" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Functions
+        </h3>
+
+        <p>Functions allow you to reuse code, have more readable code, etc. The following functions were used in the
+            loop example:</p>
+
+        <pre>
+            <code>
+function printListFromText() {
+    var text  = document.getElementById("loop-value-1").value;
+    var direction = document.querySelector('input[name="loopDirection1"]:checked').value
+    var array = createArrayFromText(text, ",", direction);
+    if (array && array.length) {
+        var results = "";
+        for (var index in array) {
+            if (!array.hasOwnProperty(index))
+                continue;
+            results += array[index] + "\n";
+        }
+        document.getElementById("loop-results-1").value = results;
+    }
+}
+
+function printListFromNumber()
+{
+    var number = parseInt(document.querySelector('input[name="loopIterateNumber"]').value);
+    var text = document.querySelector('input[name="loopIterateText"]').value;
+    if (!isNaN(number) && text)
+    {
+        var value = "";
+        for (var i = 0; i < number; i++)
+        {
+            value += text + "\n";
+        }
+        document.getElementById("loop-results-2").value = value;
+    }
+}
+
+function createArrayFromText(text, delimiter, direction) {
+    if (!text) {
+        return null;
+    }
+    if (direction == "forward")
+    {
+        return text.split(delimiter);
+    }
+    else
+    {
+        return text.split(delimiter).reverse();
+    }
+}
+            </code>
+        </pre>
+
+        <h3>
+            <a id="variables" class="anchor" href="#variables" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Variables
+        </h3>
+
+        <p>Variables store information and are great for passing that information into functions or loops. Variables
+            can be modified easily as well. The loop example used variables like the following:</p>
+
+        <pre>
+            <code>
+var text  = document.getElementById("loop-value-1").value;
+var direction = document.querySelector('input[name="loopDirection1"]:checked').value
+var array = createArrayFromText(text, ",", direction);
+if (array && array.length) {
+    var results = "";
+    for (var index in array) {
+        if (!array.hasOwnProperty(index))
+            continue;
+        results += array[index] + "\n";
+    }
+    document.getElementById("loop-results-1").value = results;
+}
+            </code>
+        </pre>
+
+        <h3>
+            <a id="parameters" class="anchor" href="#parameters" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Parameters
+        </h3>
+        <p>Parameters are passed into functions to give the function some data to work with. In the loop example above
+            we pass in parameters into the <code>createArrayFromText</code> function:</p>
+        <pre>
+            <code>
+function createArrayFromText(text, delimiter, direction) {
+    ...
+}
+
+var array = createArrayFromText(text, ",", direction);
+            </code>
+        </pre>
+
+        <h3>
+            <a id="arrays" class="anchor" href="#arrays" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Arrays
+        </h3>
+
+        <p>An array holds multiple values. These values in javascript do not need to be the same data type. A typical
+            array
+            is integer indexed, but <a class="anchor" href="#associative-arrays">associative arrays</a> are indexed by
+            name.
+            The loop example from above loops through an array two different ways:</p>
+
+        <pre>
+            <code>
+for (var index in array) {
+    if (!array.hasOwnProperty(index))
+        continue;
+    results += array[index] + "\n";
+}
+
+for (var i = 0; i < number; i++) {
+    value += text + "\n";
+}
+            </code>
+        </pre>
+
+        <h3>
+            <a id="associative-arrays" class="anchor" href="#associative-arrays" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Associative Arrays
+        </h3>
+
+        <p>Associative arrays are essentially objects that are accessed as if they were arrays where the index is a
+            named value rather than a zero-indexed number. They can almost be thought of as dictionaries.</p>
+
+        The following is list of my favorite things. Type a name from the table and click "Go" to get it's value.
+        <input type="text" name="tableValue">
+        <button type="button" onclick="showMyFavoriteThing()">Go</button>
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Animal</td>
+            </tr>
+            <tr>
+                <td>Food</td>
+            </tr>
+            <tr>
+                <td>State</td>
+            </tr>
+            <tr>
+                <td>Person</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>The array from above is accessed as follows:</p>
+        <pre><code>
+var name = document.querySelector('input[name="tableValue"]').value;
+if (name && favoriteThings.hasOwnProperty(name.toLowerCase()))
+{
+alert(favoriteThings[name.toLowerCase()]);
+}
+        </code></pre>
     </section>
     <footer>
         <p>This project is maintained by <a href="https://github.com/jdeanwaite">jdeanwaite</a></p>
@@ -116,6 +314,7 @@
     </footer>
 </div>
 <script src="/javascripts/scale.fix.js"></script>
+<script src="/assessments/week02/week02.js"></script>
 
 </body>
 </html>
