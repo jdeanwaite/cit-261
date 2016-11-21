@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Week 03</title>
+
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        textarea.loop {
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h1>Cit-261</h1>
+        <a class="anchor" href="../../index.html">Home</a>
+        <p>My personal project site for CIT 261</p>
+
+        <p class="view"><a href="https://github.com/jdeanwaite/cit-261">View the Project on GitHub
+            <small>jdeanwaite/cit-261</small>
+        </a></p>
+
+
+        <ul>
+            <li><a href="https://github.com/jdeanwaite/cit-261/zipball/master">Download <strong>ZIP File</strong></a>
+            </li>
+            <li><a href="https://github.com/jdeanwaite/cit-261/tarball/master">Download <strong>TAR Ball</strong></a>
+            </li>
+            <li><a href="https://github.com/jdeanwaite/cit-261">View On <strong>GitHub</strong></a></li>
+        </ul>
+    </header>
+    <section>
+        <h3>
+            <a id="week-03" class="anchor" href="#week-03" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Week 03
+        </h3>
+
+        <p>
+            Week 03 includes the following assessments:
+            <!--Object Creation Functions, Inheritance, Properties, Methods, Instantiation-->
+        </p>
+        <ul>
+            <li><a class="anchor" href="#object-creation-functions">Object Creation Functions</a></li>
+            <li><a class="anchor" href="#properties">Properties</a></li>
+            <li><a class="anchor" href="#methods">Methods</a></li>
+            <li><a class="anchor" href="#instantiation">Instantiation</a></li>
+            <li><a class="anchor" href="#inheritance">Inheritance</a></li>
+        </ul>
+
+        <p>Open the developer console to see the results of this week's examples.</p>
+
+        <h3>
+            <a id="object-creation-functions" class="anchor" href="#object-creation-functions" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Object Creation Functions
+        </h3>
+
+        <p>Objects in javascript are flexible and fun to make. An example of a built-in object you can create is the
+        Date object</p>
+
+        <pre>
+            <code>
+var date = new Date();
+            </code>
+        </pre>
+
+        <p>This will create a new date with the current date and time. Creating objects, giving them properties and
+        methods, inheritance, and instantiation will be explored in this week.</p>
+
+        <h3>
+            <a id="properties" class="anchor" href="#properties" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Properties
+        </h3>
+
+        <p>Object properties are typically assigned with the dot notation, but also can be assigned using the bracket
+        notation (like an associative array). These properties can be defined before the object is created, or added
+        onto the object after creation.</p>
+
+        <pre>
+            <code>
+function Car(year, make, model, color) {
+    this.year = year;
+    this.make = make;
+    this.model = model;
+    this.color = color;
+    this.totalled = false;
+}
+            </code>
+        </pre>
+
+        <h3>
+            <a id="methods" class="anchor" href="#methods" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Methods
+        </h3>
+
+        <p>Methods are functions that act on an object and are attached like properties. Typically the purpose of a
+        method is to alter the state of an object or get a value from it.</p>
+
+        <pre>
+            <code>
+Car.prototype.changeColor = function (color) {
+    this.color = color;
+};
+
+Car.prototype.crashCar = function () {
+    this.totalled = true;
+};
+            </code>
+        </pre>
+
+        <h3>
+            <a id="instantiation" class="anchor" href="#instantiation" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Instantiation
+        </h3>
+
+        <p>An object is <code>instantiated</code> using the constructor defined when the object was defined.</p>
+
+        <pre>
+            <code>
+function Car(year, make, model, color) {
+    this.year = year;
+    this.make = make;
+    this.model = model;
+    this.color = color;
+    this.totalled = false;
+}
+
+var car = new Car(2005, "Nissan", "Frontier", "White");
+console.log("car:", car.year, car.make, car.model);
+            </code>
+        </pre>
+
+        <h3>
+            <a id="inheritance" class="anchor" href="#inheritance" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Inheritance
+        </h3>
+
+        <p>Inheritance is the ability to extend the functionality of one object into another. It usually is a logical
+        relationship. For example: a sports car is a car, but a car is not necessarily a sports car. Therefore, a sports
+        car has all of the properties of a car, but with some extended functionality, such as the ability to "burn out"
+        as in this example. We also note the top speed for a sports car:</p>
+
+        <pre>
+            <code>
+function SportsCar(year, make, model, color, topSpeed) {
+    Car.call(this, year, make, model, color);
+    this.topSpeed = topSpeed;
+}
+
+SportsCar.prototype = Object.create(Car.prototype);
+SportsCar.prototype.constructor = SportsCar;
+SportsCar.prototype.burnOut = function() {
+    if (this.totalled) {
+        console.log("Sorry, no can do. This car is toast.");
+    }
+    else
+    {
+        console.log("Screeching noises and stuff.");
+    }
+};
+
+var sportsCar = new SportsCar(2005, "Nissan", "GTR", "Blue");
+console.log("sportsCar:", sportsCar.year, sportsCar.make, sportsCar.model);
+
+console.log("sportsCar color:", sportsCar.color);
+sportsCar.changeColor("blue");
+console.log("sportsCar color:", sportsCar.color);
+
+sportsCar.burnOut();
+console.log("sportsCar totalled:", sportsCar.totalled);
+sportsCar.crashCar();
+console.log("sportsCar totalled:", sportsCar.totalled);
+sportsCar.burnOut();
+            </code>
+        </pre>
+
+    </section>
+    <footer>
+        <p>This project is maintained by <a href="https://github.com/jdeanwaite">jdeanwaite</a></p>
+        <p>
+            <small>
+                Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a>
+            </small>
+        </p>
+    </footer>
+</div>
+<script src="/javascripts/scale.fix.js"></script>
+<script src="/assessments/week03/week03.js"></script>
+
+</body>
+</html>
