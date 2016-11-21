@@ -1,6 +1,6 @@
 {
   "name": "Cit-261",
   "tagline": "My personal project site for CIT 261",
-  "body": "### Welcome to Justin's CIT 261 Project Site\r\nThis site houses my code necessary to pass the assessments in the CIT 261 course. On the left side of this page you will find links to each week's work. As you click into them you will find code snippets and links to example pages.\r\n\r\n### Authors and Contributors\r\nAll code on this website is the personal work of @jdeanwaite.",
+  "body": "### Welcome to Justin's CIT 261 Project Site\r\nThis site houses my code necessary to pass the assessments in the CIT 261 course. On the left side of this page you will find links to each week's work. As you click into them you will find code snippets and links to example pages.\r\n\r\n### What You'll See\r\n```javascript\r\nfunction test() {\r\n  console.log(\"I am a code block\");\r\n}\r\n```\r\n\r\n### Authors and Contributors\r\nAll code on this website is the personal work of @jdeanwaite.",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
