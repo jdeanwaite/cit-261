@@ -34,7 +34,7 @@ function fetchWeatherData() {
             return;
         }
         httpRequest.onreadystatechange = parseWeatherData;
-        httpRequest.open('GET', 'http://api.openweathermap.org/data/2.5/weather?zip=' + zipCode + ',us&appid=fe7f87daaa3ac305ee71e2ec8deb79ec');
+        httpRequest.open('GET', 'https://api.openweathermap.org/data/2.5/weather?zip=' + zipCode + ',us&appid=fe7f87daaa3ac305ee71e2ec8deb79ec');
         httpRequest.send();
     }
 }
