@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+
+.wrapper {
+    width: 60%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    padding: 2%;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.wrapper header {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.wrapper section {
+    width: 59%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #eee;
+}
+
+a {
+    color: #3399cc;
+}
+
+pre {
+    background-color: #fafaff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: "Monaco", "Lucida Console", "Terminal", "Courier New", monospace;
+    font-size: 12px;
+    overflow-x: scroll;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #fafafa;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+h3 {
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    margin-bottom: 40px;
+}
+
+h3:not(:first-of-type)
+{
+    margin-top: 40px;
+}
+
+h4 {
+    font-weight: 400;
+}
+
+footer {
+
+}
