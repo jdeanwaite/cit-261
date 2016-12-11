@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Week 05</title>
+
+    <link rel="stylesheet" href="../../stylesheets/cit261.css">
+    <link rel="stylesheet" href="week05.css">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h1>Cit-261</h1>
+        <a class="anchor" href="../../index.html">Home</a>
+        <p>My personal project site for CIT 261</p>
+
+        <p class="view"><a href="https://github.com/jdeanwaite/cit-261">View the Project on GitHub
+            <small>jdeanwaite/cit-261</small>
+        </a></p>
+
+
+        <ul>
+            <li><a href="https://github.com/jdeanwaite/cit-261/zipball/master">Download <strong>ZIP File</strong></a>
+            </li>
+            <li><a href="https://github.com/jdeanwaite/cit-261/tarball/master">Download <strong>TAR Ball</strong></a>
+            </li>
+            <li><a href="https://github.com/jdeanwaite/cit-261">View On <strong>GitHub</strong></a></li>
+        </ul>
+    </header>
+    <section>
+        <h3>
+            <a id="week-05" class="anchor" href="#week-05" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Week 05
+        </h3>
+
+        <p>
+            Week 05 includes the following assessments:
+        </p>
+        <!--JSON Parse, Stringify, Using XMLHTTPRequest to Consume a JSON Web Service-->
+        <ul>
+            <li><a class="anchor" href="#local-storage">Local Storage API</a></li>
+            <li><a class="anchor" href="#storing-and-retrieving">Storing and Retrieving Simple Data, Arrays, Associative
+                Arrays, and Objects</a></li>
+            <li><a class="anchor" href="#dom-manipulation">DOM Manipulation Using createElement, appendChild,
+                insertBefore, removeChild, etc.</a></li>
+            <li><a class="anchor" href="#css-manipulation">Manipulating CSS Class Properties Using JavaScript</a></li>
+        </ul>
+
+        <h3>
+            <a id="local-storage" class="anchor" href="#local-storage" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Local Storage API
+        </h3>
+
+        <p>The <code>localStorage</code> API allows you to persist data on a client's machine that will persist even
+            through a browser restart. Session storage only allows you to store data until the browser is closed.</p>
+
+        <h3>
+            <a id="storing-and-retrieving" class="anchor" href="#storing-and-retrieving" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects
+        </h3>
+
+        <h4><strong>Store simple data</strong></h4>
+
+        <p>To test the local storage functionality, use the inputs and their associated buttons, and then refresh the
+            page or restart the browser.</p>
+
+        <input type="text" name="textData" placeholder="Simple Text Data">
+        <button type="button" onclick="saveSimpleData('textData')">Save</button>
+        <br>
+
+        <input type="number" name="numberData" placeholder="Simple Number Data">
+        <button type="button" onclick="saveSimpleData('numberData')">Save</button>
+        <br>
+
+        <h4><strong>Arrays, Associative Arrays, and Objects</strong></h4>
+
+        <p>Arrays, associative arrays, and objects can all be stored on localStorage in a similar fashion. They should
+            be stored by converting them to <code>JSON</code> using <code>JSON.stringify()</code> and then parsed back
+            into javascript objects by using <code>JSON.parse()</code>. Modify the list below and click save to persist
+            a new array.</p>
+
+        <button type="button" onclick="saveArray('arrayTextArea')">Save</button>
+        <textarea name="arrayTextArea" title="Array Input">1,2,3,4,5</textarea>
+
+        <pre><code>
+function saveAssociativeArray() {
+    var testAssociativeArray = [];
+    testAssociativeArray["book"] = "Harry Potter";
+    testAssociativeArray["city"] = "London";
+    console.log("storing:", testAssociativeArray);
+    localStorage.setItem("testAssociativeArray", JSON.stringify(testAssociativeArray));
+}
+        </code></pre>
+
+        <pre><code>
+function saveObject() {
+    var testObject = {
+        hello: "World",
+        count: 1
+    };
+    console.log("storing:", testObject);
+    localStorage.setItem("testObject", JSON.stringify(testObject));
+}
+
+        </code></pre>
+
+        <h3>
+            <a id="dom-manipulation" class="anchor" href="#dom-manipulation" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.
+        </h3>
+
+        <button type="button" onclick="createNewElement('red', true)">Append red element</button>
+        <button type="button" onclick="createNewElement('blue', false)">Prepend blue element</button>
+
+        <div id="dynamic-element-container">
+
+        </div>
+
+        <h3>
+            <a id="css-manipulation" class="anchor" href="#css-manipulation" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Manipulating CSS Class Properties Using JavaScript
+        </h3>
+
+        <div class="chameleon">
+            <p>Change my colors! Enter valid hex values in the text boxes below:</p>
+            <label>Text Color</label>
+            <input type="text" oninput="setElementCSS(this.parentElement, 'color', this.value)" title="Text Color Input" value="#000000">
+            <br>
+            <label>Background Color</label>
+            <input type="text" oninput="setElementCSS(this.parentElement, 'background-color', this.value)" title="Background Color Input" value="#FFFFFF">
+            <br>
+        </div>
+
+    </section>
+</div>
+<script src="../../assessments/week05/week05.js"></script>
+
+</body>
+</html>

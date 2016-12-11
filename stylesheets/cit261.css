@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
 
 .wrapper {
-    width: 60%;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
@@ -11,16 +10,50 @@
     border: 1px solid rgba(0, 0, 0, .2);
 }
 
+@media screen and (min-width: 480px) {
+    .wrapper {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .wrapper {
+        width: 60%;
+    }
+}
+
 .wrapper header {
-    width: 40%;
     display: inline-block;
     vertical-align: top;
 }
 
+@media screen and (min-width: 480px) {
+    .wrapper header {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .wrapper header {
+        width: 40%;
+    }
+}
+
 .wrapper section {
-    width: 59%;
     display: inline-block;
     vertical-align: top;
+}
+
+@media screen and (min-width: 480px) {
+    .wrapper section {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .wrapper section {
+        width: 59%;
+    }
 }
 
 body {
@@ -60,8 +93,7 @@ h3 {
     margin-bottom: 40px;
 }
 
-h3:not(:first-of-type)
-{
+h3:not(:first-of-type) {
     margin-top: 40px;
 }
 

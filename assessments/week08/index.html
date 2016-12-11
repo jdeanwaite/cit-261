@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Week 08</title>
+
+    <link rel="stylesheet" href="../../stylesheets/cit261.css">
+    <link rel="stylesheet" href="week08.css">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h1>Cit-261</h1>
+        <a class="anchor" href="../../index.html">Home</a>
+        <p>My personal project site for CIT 261</p>
+
+        <p class="view"><a href="https://github.com/jdeanwaite/cit-261">View the Project on GitHub
+            <small>jdeanwaite/cit-261</small>
+        </a></p>
+
+
+        <ul>
+            <li><a href="https://github.com/jdeanwaite/cit-261/zipball/master">Download <strong>ZIP File</strong></a>
+            </li>
+            <li><a href="https://github.com/jdeanwaite/cit-261/tarball/master">Download <strong>TAR Ball</strong></a>
+            </li>
+            <li><a href="https://github.com/jdeanwaite/cit-261">View On <strong>GitHub</strong></a></li>
+        </ul>
+    </header>
+    <section>
+        <h3>
+            <a id="week-08" class="anchor" href="#week-08" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Week 08
+        </h3>
+
+        <p>
+            Week 08 includes the following assessments:
+        </p>
+        <!--JSON Parse, Stringify, Using XMLHTTPRequest to Consume a JSON Web Service-->
+        <ul>
+            <li><a class="anchor" href="#html5-tags">HTML5 Tags - Video, Audio, and Canvas</a></li>
+        </ul>
+
+        <h3>
+            <a id="html5-tags" class="anchor" href="#html5-tags" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            HTML5 Tags - Video, Audio, and Canvas
+        </h3>
+
+        <p>HTML5 offers many new and improved tags for media such as Video, Audio and Canvas tags. This page will
+            demonstrate each of these and explore some of their capabilities.</p>
+
+        <h3>Video</h3>
+
+        <p>
+            The <code>video</code> tag allows you to embed video into your site by specifying a source and a type for
+            the video.
+        </p>
+
+        <video width="100%" height="auto" controls>
+            <source src="big_buck_bunny.mp4" type="video/mp4">
+            <source src="big_buck_bunny.ogv" type="video/ogg">
+            Your browser does not support the video tag.
+        </video>
+
+        <p>The <code>video</code> tag allows you to support multiple video formats that the browser will cascade through
+            until a compatible one is found for the current device. It no format is compatible with the device, you are
+            able to fall back on an error message.</p>
+
+        <pre>
+            <code>
+&lt;video width="100%" height="auto" controls&gt;
+    &lt;source src="big_buck_bunny.mp4" type="video/mp4"&gt;
+    &lt;source src="big_buck_bunny.ogv" type="video/ogg"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+            </code>
+        </pre>
+
+        <h3>Audio</h3>
+
+        <p>The <code>audio</code> tag works similarly to the video tag. Enjoy listening to the India National Anthem by
+            clicking the play button below.</p>
+
+        <audio src=""></audio>
+        <audio controls>
+            <source src="http://www.sample-videos.com/audio/mp3/india-national-anthem.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Canvas</h3>
+
+        <p>HTML 5's <code>canvas</code> tag is designed for rendering graphics onto the screen and serves many functions
+            including allowing for drawing via inputs such as click or touch. Feel free to draw a picture in the canvas
+            below:</p>
+
+        <input type="color" id="color-picker" onchange="setContextColor()" value="#ff0000" style="width:100%;" title="Color Picker">
+        <canvas id="draw-canvas">
+            Your browser does not support the <code>canvas</code> tag.
+        </canvas>
+    </section>
+</div>
+<script src="../../assessments/week08/week08.js"></script>
+
+</body>
+</html>
